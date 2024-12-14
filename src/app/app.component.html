@@ -1,13 +1,43 @@
+<h3>My First Signal 🚀</h3>
 <pre>mySignal: {{mySignal()}}</pre>
+<button (click)="setMySignal()">Set</button>
+<button (click)="updateMySignal()">Update</button>
 
-<pre>counter 1: {{counter1()}}</pre>
-<pre>counter 2: {{counter2()}}</pre>
-<pre>counter 2: {{sum()}}</pre>
+
+<h3>Derived State with `computed`</h3>
+<pre>counter1: {{counter1()}}</pre>
+<pre>counter2: {{counter2()}}</pre>
+<pre>counter3: {{counter3().count}}</pre>
+<pre>sum: {{sum()}}</pre>
 
 <button (click)="incrementCounter1()">Increment Counter 1</button>
 <button (click)="incrementCounter2()">Increment Counter 2</button>
+<button (click)="incrementCounter3()">Increment Counter 3 ❗</button>
 
 
-<button (click)="setValue()">Set Value</button>
+<h3>Run side-effects with `effect`</h3>
+<pre>valueForEffect: {{valueForEffect()}}</pre>
+
+<button (click)="setValueForEffect()">Set same value ❗</button>
+<button (click)="updateValueForEffect()">Set other value (increment)</button>
+<button (click)="manyStateUpdates()">Many state updates ❗</button>
+
+<p>Please check the JS console to see the effect logging</p>
+
+<h3>RxJS Interop</h3>
+<pre>observableFromSignal$ (sum): {{observableFromSignal$ | async}}</pre>
+<pre>signalFromObservable: {{signalFromObservable()}}</pre>
+<button (click)="incrementObservable()">Increment Observable</button>
+
+<h3>Resource API</h3>
+<form>
+  <input name="search" [ngModel]="search()" (ngModelChange)="search.set($event)" [placeholder]="'Search for jokes...'">
+</form>
+
+<pre>rxResource hasValue: {{chuckNorrisJokes.hasValue() | json}}</pre>
+<pre>rxResource value: {{chuckNorrisJokes.value() | json}}</pre>
+<pre>rxResource error: {{chuckNorrisJokes.error() | json}}</pre>
+<pre>rxResource isLoading: {{chuckNorrisJokes.isLoading()}}</pre>
+<pre>rxResource status: {{chuckNorrisJokes.status()}}</pre>
 
 <router-outlet />
