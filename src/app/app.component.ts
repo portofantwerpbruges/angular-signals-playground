@@ -14,7 +14,7 @@ import { BehaviorSubject } from 'rxjs';
 })
 export class AppComponent {
   // My First Signal 🚀
-  mySignal = signal(1); // == BehaviorSubject(42)
+  mySignal = signal(1); // == BehaviorSubject(1)
 
   setMySignal() {
     this.mySignal.set(42)
@@ -39,10 +39,12 @@ export class AppComponent {
   }
 
   incrementCounter3(): void {
-    this.counter3.update(v => {
-      v.count = v.count + 1
-      return v
-    })
+    this.counter3.update(v => ({
+      // v.count = v.count + 1
+      // return v
+      ...v,
+      count: v.count + 1
+    }))
   }
 
   // Run side-effects with `effect`
