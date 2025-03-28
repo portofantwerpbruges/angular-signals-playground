@@ -1,43 +1,48 @@
-<h3>My First Signal 🚀</h3>
-<pre>mySignal: {{mySignal()}}</pre>
-<button (click)="setMySignal()">Set</button>
-<button (click)="updateMySignal()">Update</button>
+<div style="background: #393838; color: white;" class="px-3 pt-2 pb-1">
+  <h5><a href="" style="color: white;">
+    Angular Signals 🚦 Playground
+  </a></h5>
+</div>
 
 
-<h3>Derived State with `computed`</h3>
-<pre>counter1: {{counter1()}}</pre>
-<pre>counter2: {{counter2()}}</pre>
-<pre>counter3: {{counter3().count}}</pre>
-<pre>sum: {{sum()}}</pre>
+<div class="d-flex p-3">
+  <div class="mr-5 flex-shrink-0">
+    👿😈The old days
+    <ul>
+      <li><a href="./non-reactive">Non reactive</a></li>
+      <li><a href="./reactive-with-rxjs">Reactive with RxJS</a></li>
+    </ul>
+    😎Modern Angular
+    <ul>
+      <li>
+        <a href="./my-first-signal">My First Signal</a>
+      </li>
+      <li>
+        <a href="./derived-state">Derived State</a>
+      </li>
+      <li>
+        <a href="./effect">Effect</a>
+      </li>
+      <li>
+        <a href="./rxjs-interop">RxJS interop</a>
+      </li>
+      <li>
+        <a href="./signal-input">Signal Input</a>
+      </li>
+    </ul>
+  </div>
 
-<button (click)="incrementCounter1()">Increment Counter 1</button>
-<button (click)="incrementCounter2()">Increment Counter 2</button>
-<button (click)="incrementCounter3()">Increment Counter 3 ❗</button>
+  <router-outlet/>
+</div>
 
 
-<h3>Run side-effects with `effect`</h3>
-<pre>valueForEffect: {{valueForEffect()}}</pre>
+<!--<h3>Resource API</h3>-->
+<!--<form>-->
+<!--  <input name="search" [ngModel]="search()" (ngModelChange)="search.set($event)" [placeholder]="'Search for jokes...'">-->
+<!--</form>-->
 
-<button (click)="setValueForEffect()">Set same value ❗</button>
-<button (click)="updateValueForEffect()">Set other value (increment)</button>
-<button (click)="manyStateUpdates()">Many state updates ❗</button>
-
-<p>Please check the JS console to see the effect logging</p>
-
-<h3>RxJS Interop</h3>
-<pre>observableFromSignal$ (sum): {{observableFromSignal$ | async}}</pre>
-<pre>signalFromObservable: {{signalFromObservable()}}</pre>
-<button (click)="incrementObservable()">Increment Observable</button>
-
-<h3>Resource API</h3>
-<form>
-  <input name="search" [ngModel]="search()" (ngModelChange)="search.set($event)" [placeholder]="'Search for jokes...'">
-</form>
-
-<pre>rxResource hasValue: {{chuckNorrisJokes.hasValue() | json}}</pre>
-<pre>rxResource value: {{chuckNorrisJokes.value() | json}}</pre>
-<pre>rxResource error: {{chuckNorrisJokes.error() | json}}</pre>
-<pre>rxResource isLoading: {{chuckNorrisJokes.isLoading()}}</pre>
-<pre>rxResource status: {{chuckNorrisJokes.status()}}</pre>
-
-<router-outlet />
+<!--<pre>rxResource hasValue: {{ chuckNorrisJokes.hasValue() | json }}</pre>-->
+<!--<pre>rxResource value: {{ chuckNorrisJokes.value() | json }}</pre>-->
+<!--<pre>rxResource error: {{ chuckNorrisJokes.error() | json }}</pre>-->
+<!--<pre>rxResource isLoading: {{ chuckNorrisJokes.isLoading() }}</pre>-->
+<!--<pre>rxResource status: {{ chuckNorrisJokes.status() }}</pre>-->

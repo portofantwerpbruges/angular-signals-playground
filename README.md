@@ -4,12 +4,11 @@
 
 *  `signal` 👀 
 *  `computed` 👀
+*  `effect` (Developer preview) 👀
 *  `toSignal` (Developer preview) 👀
 *  `toObservable` (Developer preview) 👀
-*  `input`
-*  `output` 
+*  `input` 👀
 *  `model`
-*  `effect` (Developer preview) 👀
 *  `contentChild`
 *  `contentChildren`
 *  `viewChild`
@@ -18,11 +17,11 @@
 Added in Angular 19
 *  `linkedSignal` (Developer preview)
 *  `resource` (Experimental)
-*  `rxResource` (Experimental) 👀 
+*  `rxResource` (Experimental)
 
 ### Signal State Service in our Angular Libs
 
-Draft MR: https://gitlab.portofantwerp.com/development/angular-libraries/-/merge_requests/736
+README: https://gitlab.portofantwerp.com/development/angular-libraries/-/tree/master/ams-workspace/projects/ams-utils?ref_type=heads#signal-state-service
 
 ### MiniRx Signal Store
 
