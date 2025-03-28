@@ -5,14 +5,17 @@ import { Component, effect, signal } from '@angular/core';
   imports: [],
   template: `
     <h3>Listen to Signal state changes with <code>effect</code></h3>
+    <span class="badge badge-warning">Developer Preview</span>
 
-    <p>Please check the JS console to see the effect logging</p>
+    <div class="mt-3">
+      <p>Please check the JS console to see the effect logging</p>
 
-    <pre>mySignal: {{ mySignal() }}</pre>
+      <pre>mySignal: {{ mySignal() }}</pre>
 
-    <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValue()">Update with new value (increment)</button>
-    <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValueManyTimes()">❗Update with new value (increment) -- many times</button>
-    <button class="btn btn-outline-primary" (click)="updateWithSameValue()">❗Update with same value</button>
+      <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValue()">Update with new value (increment)</button>
+      <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValueManyTimes()">❗Update with new value (increment) -- many times</button>
+      <button class="btn btn-outline-primary" (click)="updateWithSameValue()">❗Update with same value</button>
+    </div>
   `
 })
 export class EffectComponent {

@@ -8,6 +8,7 @@ export const routes: Routes = [
   { path: 'effect', loadComponent: () => import('./components/05-effect.component').then(v => v.EffectComponent) },
   { path: 'rxjs-interop', loadComponent: () => import('./components/06-rxjs-interop.component').then(v => v.RxjsInteropComponent) },
   { path: 'signal-input', loadComponent: () => import('./components/07-signal-input/signal-input-shell.component').then(v => v.SignalInputShellComponent) },
+  { path: 'rx-resource', loadComponent: () => import('./components/08-rx-resource.component').then(v => v.RxResourceComponent) },
   { path: '', redirectTo: '/non-reactive', pathMatch: 'full' },
 ];
 

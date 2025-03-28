@@ -10,21 +10,24 @@ import { BehaviorSubject } from 'rxjs';
   ],
   template: `
     <h3>RxJS Interop: <code>toObservable</code> and <code>toSignal</code></h3>
+    <span class="badge badge-warning">Developer Preview</span>
 
-    <h5>Signal to Observable</h5>
+    <div class="mt-3">
+      <h5>Signal to Observable</h5>
 
-    <pre>mySignal: {{ mySignal() }}</pre>
-    <pre>observableFromSignal$: {{ observableFromSignal$ | async }}</pre>
+      <pre>mySignal: {{ mySignal() }}</pre>
+      <pre>observableFromSignal$: {{ observableFromSignal$ | async }}</pre>
 
-    <button class="btn btn-outline-primary" (click)="updateSignal()">Update Signal</button>
+      <button class="btn btn-outline-primary" (click)="updateSignal()">Update Signal</button>
 
 
-    <h5 class="mt-4">Observable to Signal</h5>
+      <h5 class="mt-4">Observable to Signal</h5>
 
-    <pre>myObservable$: {{ myObservable$ | async }}</pre>
-    <pre>signalFromObservable: {{ signalFromObservable() }}</pre>
+      <pre>myObservable$: {{ myObservable$ | async }}</pre>
+      <pre>signalFromObservable: {{ signalFromObservable() }}</pre>
 
-    <button class="btn btn-outline-primary" (click)="updateObservable()">Update Observable</button>
+      <button class="btn btn-outline-primary" (click)="updateObservable()">Update Observable</button>
+    </div>
   `
 })
 export class RxjsInteropComponent {
