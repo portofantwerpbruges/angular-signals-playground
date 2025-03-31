@@ -4,26 +4,33 @@ import { Component, computed, signal } from '@angular/core';
   template: `
     <h3>Derived State with <code>computed</code></h3>
 
-    <pre>a: {{a()}}</pre>
-    <pre>b: {{b()}}</pre>
-    <pre>sum: {{sum()}}</pre>
+    <pre>a: {{a}}</pre>
+    <pre>b: {{b}}</pre>
+    <pre>sum: {{sum}}</pre>
 
     <button class="btn btn-outline-primary mr-2" (click)="incrementA()">Increment a</button>
     <button class="btn btn-outline-primary" (click)="incrementB()">Increment b</button>
-  `
+ `
 })
 export class DerivedStateComponent {
-  a = signal(0);
-  b = signal(0);
-  sum = computed(() => {
-    return this.a() + this.b()
-  })
+  // Live coding! Refactor to Signals! 🚦
+
+  a: number = 0;
+  b: number = 0;
+
+  sum: number = 0;
+
+  updateSum(): void {
+    this.sum = this.a + this.b;
+  }
 
   incrementA() {
-    this.a.update(value => value + 1);
+    this.a++;
+    this.updateSum();
   }
 
   incrementB() {
-    this.b.update(value => value + 1)
+    this.b++;
+    this.updateSum();
   }
 }

@@ -26,7 +26,7 @@ export class NonReactiveComponent {
 
   incrementA() {
     this.a++;
-    this.updateSum()
+    this.updateSum();
   }
 
   incrementB() {

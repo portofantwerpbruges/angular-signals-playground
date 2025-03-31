@@ -6,6 +6,7 @@ import { Component, signal } from '@angular/core';
   template: `
     <h3>My First Signal 🚦</h3>
 
+    <!--           👇 Signal read-->
     <pre>mySignal: {{mySignal()}}</pre>
 
     <button class="btn btn-outline-primary mr-2" (click)="setMySignal()">Set</button>
@@ -13,18 +14,18 @@ import { Component, signal } from '@angular/core';
   `
 })
 export class MyFirstSignalComponent {
-  // 👇 My First Signal 🚀
+  // 👇 My First Signal
   mySignal = signal(1);
   // In RxJS: myBehaviorSubject = new BehaviorSubject(1);
 
-  // 👇 Update Signal state with `set`
   setMySignal() {
+    // 👇 Update Signal state with `set`
     this.mySignal.set(42)
     // In RxJS: myBehaviorSubject.next(42);
   }
 
-  // 👇 Update Signal state with `update` (`update` takes a callback function which gives access to the current signal value)
   updateMySignal() {
+    // 👇 Update Signal state with `update` (`update` takes a callback function which gives access to the current signal value)
     this.mySignal.update(v => v + 1);
     // In RxJS: myBehaviorSubject.next(this.myBehaviorSubject.value + 1);
   }
