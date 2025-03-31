@@ -15,10 +15,14 @@ import {  Component } from '@angular/core';
 export class NonReactiveComponent {
   // 👇 Raw values (JS primitives, objects, ...)
   // Raw values themselves do not know about value updates!
-  a: number = 0;
-  b: number = 0;
+  a: number = 1;
+  b: number = 2;
 
   sum: number = 0;
+
+  constructor() {
+    this.updateSum();
+  }
 
   updateSum(): void {
     this.sum = this.a + this.b;

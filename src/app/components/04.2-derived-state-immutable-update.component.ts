@@ -12,8 +12,10 @@ import { Component, computed, signal } from '@angular/core';
     <pre>b.value: {{ b().value }}</pre>
     <pre>sum: {{ sum() }}</pre>
 
-    <button class="btn btn-outline-primary mr-2" (click)="incrementA()">Increment a</button>
-    <button class="btn btn-outline-primary mr-2" (click)="incrementB()">Increment b.value</button>
+    <div class="mb-2">
+      <button class="btn btn-outline-primary mr-2" (click)="incrementA()">Increment a</button>
+      <button class="btn btn-outline-primary mr-2" (click)="incrementB()">Increment b.value</button>
+    </div>
     <button class="btn btn-outline-primary" (click)="mutateB()">❗ Mutate b.value</button>
   `
 })

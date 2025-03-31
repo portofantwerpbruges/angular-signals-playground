@@ -19,8 +19,8 @@ import { AsyncPipe } from '@angular/common';
 })
 export class ReactiveWithRxjsComponent {
   // 👇 BehaviorSubject is reactive!
-  a$ = new BehaviorSubject(0);
-  b$ = new BehaviorSubject(0);
+  a$ = new BehaviorSubject(1);
+  b$ = new BehaviorSubject(2);
 
   // Sum is calculated whenever a$ or b$ emit a value
   sum$ = combineLatest([this.a$, this.b$]).pipe(

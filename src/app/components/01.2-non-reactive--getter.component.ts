@@ -19,8 +19,8 @@ import {  Component } from '@angular/core';
 export class NonReactiveComponent {
   // 👇 Raw values (JS primitives, objects, ...)
   // Raw values themselves do not know about value updates!
-  a: number = 0;
-  b: number = 0;
+  a: number = 1;
+  b: number = 2;
 
   // 👇 Called by Angular Change Detection / zone.js
   // Getter is called more often than necessary!

@@ -12,9 +12,9 @@ import { Component, effect, signal } from '@angular/core';
 
       <pre>mySignal: {{ mySignal() }}</pre>
 
-      <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValue()">Update with new value (increment)</button>
-      <button class="btn btn-outline-primary mr-2" (click)="updateWithNewValueManyTimes()">❗Update with new value (increment) -- many times</button>
-      <button class="btn btn-outline-primary" (click)="updateWithSameValue()">❗Update with same value</button>
+      <button class="d-block btn btn-outline-primary mb-2" (click)="updateWithNewValue()">Update with new value (increment)</button>
+      <button class="d-block btn btn-outline-primary mb-2" (click)="updateWithNewValueManyTimes()">❗Update with new value (increment) -- many times</button>
+      <button class="d-block btn btn-outline-primary" (click)="updateWithSameValue()">❗Update with same value</button>
     </div>
   `
 })

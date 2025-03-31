@@ -13,12 +13,17 @@ import { Component, computed, signal } from '@angular/core';
  `
 })
 export class DerivedStateComponent {
-  // Live coding! Refactor to Signals! 🚦
+  // ⚠️ Ugly imperative code!
+  // Refactor to Signals! use `signal` and `computed`!
 
-  a: number = 0;
-  b: number = 0;
+  a: number = 1;
+  b: number = 2;
 
   sum: number = 0;
+
+  constructor() {
+    this.updateSum();
+  }
 
   updateSum(): void {
     this.sum = this.a + this.b;
