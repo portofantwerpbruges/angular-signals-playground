@@ -18,22 +18,22 @@ import { AsyncPipe } from '@angular/common';
   `
 })
 export class ReactiveWithRxjsComponent {
-  private a = new BehaviorSubject(0);
-  a$ = this.a.asObservable();
-  private b = new BehaviorSubject(0);
-  b$ = this.b.asObservable();
+  // 👇 BehaviorSubject is reactive!
+  a$ = new BehaviorSubject(0);
+  b$ = new BehaviorSubject(0);
 
-  sum$ = combineLatest([this.a, this.b]).pipe(
+  // Sum is calculated whenever a$ or b$ emit a value
+  sum$ = combineLatest([this.a$, this.b$]).pipe(
     map(([a, b]) => {
       return a + b;
     })
   )
 
   incrementA() {
-    this.a.next(this.a.value + 1);
+    this.a$.next(this.a$.value + 1);
   }
 
   incrementB() {
-    this.b.next(this.b.value + 1);
+    this.b$.next(this.b$.value + 1);
   }
 }

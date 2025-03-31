@@ -2,7 +2,7 @@ import {  Component } from '@angular/core';
 
 @Component({
   template: `
-    <h3>👿Non reactive</h3>
+    <h3>👿Non reactive (imperative)</h3>
 
     <pre>a: {{a}}</pre>
     <pre>b: {{b}}</pre>
@@ -18,23 +18,19 @@ export class NonReactiveComponent {
   a: number = 0;
   b: number = 0;
 
-  get sum(): number {
-    return this.a + this.b;
-  }
+  sum: number = 0;
 
-  // sum: number = 0;
-  //
-  // updateSum(): void {
-  //   this.sum = this.a + this.b;
-  // }
+  updateSum(): void {
+    this.sum = this.a + this.b;
+  }
 
   incrementA() {
     this.a++;
-    // this.updateSum()
+    this.updateSum()
   }
 
   incrementB() {
     this.b++;
-    // this.updateSum();
+    this.updateSum();
   }
 }

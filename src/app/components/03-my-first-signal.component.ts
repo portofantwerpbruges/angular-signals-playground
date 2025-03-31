@@ -13,7 +13,7 @@ import { Component, signal } from '@angular/core';
   `
 })
 export class MyFirstSignalComponent {
-  // My First Signal 🚀
+  // 👇 My First Signal 🚀
   mySignal = signal(1);
   // In RxJS: myBehaviorSubject = new BehaviorSubject(1);
 

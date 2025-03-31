@@ -1,7 +1,7 @@
 import { Component, inject, signal } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 import { rxResource } from '@angular/core/rxjs-interop';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, httpResource } from '@angular/common/http';
 import { JsonPipe } from '@angular/common';
 
 @Component({
@@ -20,6 +20,9 @@ import { JsonPipe } from '@angular/common';
         <input name="search" [ngModel]="search()" (ngModelChange)="search.set($event)" [placeholder]="'Search for jokes...'">
       </form>
 
+      <button (click)="reload()">Reload</button>
+      <button (click)="clear()">Clear</button>
+
       <pre>hasValue: {{ chuckNorrisJokes.hasValue() | json }}</pre>
       <pre>value: {{ chuckNorrisJokes.value() | json }}</pre>
       <pre>error: {{ chuckNorrisJokes.error() | json }}</pre>
@@ -29,17 +32,27 @@ import { JsonPipe } from '@angular/common';
   `
 })
 export class RxResourceComponent {
-  private httpClient = inject(HttpClient);
-
-  fetchJokes(v: string) {
-    return this.httpClient.get(
-      'https://api.chucknorris.io/jokes/search?query=' + v
-    );
-  }
+  // private httpClient = inject(HttpClient);
+  //
+  // fetchJokes(v: string) {
+  //   return this.httpClient.get(
+  //     'https://api.chucknorris.io/jokes/search?query=' + v
+  //   );
+  // }
 
   search = signal('');
-  chuckNorrisJokes = rxResource({
-    request: () => ({search: this.search()}),
-    loader: (v) => this.fetchJokes(v.request.search)
-  })
+  // chuckNorrisJokes = rxResource({
+  //   request: () => ({search: this.search()}),
+  //   loader: (v) => this.fetchJokes(v.request.search)
+  // })
+
+  chuckNorrisJokes = httpResource(() => 'https://api.chucknorris.io/jokes/search?query=' + this.search())
+
+  reload(): void {
+    this.chuckNorrisJokes.reload()
+  }
+
+  clear(): void {
+    this.chuckNorrisJokes.set([])
+  }
 }
