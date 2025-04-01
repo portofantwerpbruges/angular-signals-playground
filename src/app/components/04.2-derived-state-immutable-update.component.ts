@@ -39,9 +39,9 @@ export class DerivedStateImmutableUpdateComponent {
 
   // ❗ State mutation! The sum Signal will not know that b.value has a new value
   mutateB(): void {
-    this.b.update(v => {
-      v.value = v.value + 1 // Mutation of the value property
-      return v;
+    this.b.update(object => {
+      object.value = object.value + 1 // Mutation of the value property
+      return object;
     })
   }
 }
