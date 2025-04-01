@@ -31,17 +31,17 @@ export class DerivedStateImmutableUpdateComponent {
   }
 
   incrementB(): void {
-    this.b.update(object => ({
-      ...object,
-      value: object.value + 1
+    this.b.update(obj => ({
+      ...obj,
+      value: obj.value + 1
     }))
   }
 
   // ❗ State mutation! The sum Signal will not know that b.value has a new value
   mutateB(): void {
-    this.b.update(object => {
-      object.value = object.value + 1 // Mutation of the value property
-      return object;
+    this.b.update(obj => {
+      obj.value = obj.value + 1 // Mutation of the value property
+      return obj;
     })
   }
 }
