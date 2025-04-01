@@ -24,7 +24,7 @@ export class EffectComponent {
   constructor() {
     // 👇 Listen to Signal state changes with `effect`
     effect(() => {
-      console.log('mySignal updated', this.mySignal()) // Logs when `mySignal` has a new value
+      console.log('mySignal updated...', this.mySignal()) // Logs when `mySignal` has a new value
     });
   }
 
