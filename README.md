@@ -2,7 +2,7 @@
 
 In the **Angular Signals Playground** you can explore Angular [Signal](https://angular.dev/guide/signals) APIs.
 
-![signal-computed.png](README-assets/signal-computed.png)
+![signal-computed.png](README-assets/signal-playground-interactive.gif)
 
 ### Signal APIs available in Angular 19
 

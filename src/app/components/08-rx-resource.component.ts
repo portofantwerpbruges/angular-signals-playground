@@ -11,7 +11,7 @@ import { JsonPipe } from '@angular/common';
     JsonPipe
   ],
   template: `
-    <h3>Resource API</h3>
+    <h3>Rx Resource</h3>
 
     <span class="badge badge-danger">Experimental</span>
 
