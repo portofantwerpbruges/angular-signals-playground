@@ -31,20 +31,10 @@ import { JsonPipe } from '@angular/common';
     </div>
   `
 })
-export class RxResourceComponent {
-  private httpClient = inject(HttpClient);
-
-  fetchJokes(v: string) {
-    return this.httpClient.get(
-      'https://api.chucknorris.io/jokes/search?query=' + v
-    );
-  }
-
+export class HttpResourceComponent {
   search = signal('');
-  chuckNorrisJokes = rxResource({
-    request: () => ({search: this.search()}),
-    loader: (v) => this.fetchJokes(v.request.search)
-  })
+
+  chuckNorrisJokes = httpResource(() => 'https://api.chucknorris.io/jokes/search?query=' + this.search())
 
   reload(): void {
     this.chuckNorrisJokes.reload()
